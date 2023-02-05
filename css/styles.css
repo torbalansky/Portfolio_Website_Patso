@@ -378,3 +378,10 @@ transition: all 0.5s ease;
 .button input[type="button"]:hover{
   background: var(--active-color);
 }
+
+@media screen and (max-width: 500px) {
+  .container {
+    float: none;
+    display:block;
+  }
+}
