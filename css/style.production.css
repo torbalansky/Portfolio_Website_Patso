@@ -117,7 +117,7 @@ div {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 30px;
-  text-align: center;
+  text-align: justify;
 }
 
 .profile__portrait {
