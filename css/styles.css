@@ -137,7 +137,7 @@ footer {
 }
 
 .page-header {
-  background-color: var(--background-color);
+  background-color: var(--grid-item-color);
   display: flex;
   width: var(--width);
   padding: 7px;
@@ -154,16 +154,28 @@ footer {
 }
 
 .navigation-list {
+  float: right;
   list-style-type: none;
 }
 
 .navigation-list li {
   display: inline-block;
-  margin-left: 40px;
+  margin-left: 20px;
+}
+
+.navigation-list li:hover{
+  background-color: var(--primary-color)
 }
 
 .navigation-list {
   position: right;
+}
+
+@media screen and (max-width: 500px) {
+  .navigation-list li {
+    float: none;
+    display: block;
+  }
 }
 
 .grid {
