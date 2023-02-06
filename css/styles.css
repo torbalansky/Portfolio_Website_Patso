@@ -183,8 +183,8 @@ footer {
 }
 
 .grid__item {
-  background-color: var(--secondary-color);
-  -webkit-text-fill-color: var(--primary-color);
+  background-color: rgb(76, 0, 139);
+  -webkit-text-fill-color: var(--secondary-color);
 }
 
 .grid__item:last-child {
