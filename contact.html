@@ -53,15 +53,18 @@
               </div>
               <div class="right-side">
                 <div class="topic-text">Send me a message</div>
-                <form action="#">
+                <form action="#" method="post" id="contact-form">
                 <div class="input-box">
-                  <input type="text" placeholder="Your name...">
+                  <label for="Name" class="standard label"> Name </label>
+                  <input type="Name" id="Name" placeholder="Your name..." required>
                 </div>
                 <div class="input-box">
-                  <input type="text" placeholder="Your email...">
+                  <label for="email" class="standard label"> E-mail </label>
+                  <input type="email" id="email" placeholder="Your email..." required>
                 </div>
                 <div class="input-box message-box">
-                    <textarea placeholder="Your message"></textarea> 
+                  <label for="Message" class="standard label"> Message </label>
+                    <textarea id="Message" name="Message" placeholder="Your message"></textarea> 
                 </div>
                 <div class="button">
                 <input type="button" value="Send" >

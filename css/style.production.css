@@ -5,7 +5,6 @@
 * Browsers: last 2 version
 */
 
-
 :root {
   --background-color:#2d5f89;
   --primary-color: black;
@@ -415,6 +414,7 @@ margin-bottom: 10px;
 }
 
 .right-side .message-box {
+  padding-bottom: 30px;
   height: 200px;
   margin-top: 6px;
 }
