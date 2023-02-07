@@ -1,9 +1,9 @@
 :root {
-  --background-color:#2d5f89;
+  --background-color: #2d5f89;
   --primary-color: black;
   --secondary-color: white;
   --visited-color: rgb(220, 233, 204);
-  --active-color: #ff0000;
+  --active-color: #f00;
   --element-selector-color: rgb(218, 222, 204);
   --border-color: white;
   --button-background-color: #565757;
@@ -20,10 +20,8 @@ body {
   color: var(--secondary-color);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", sans-serif;
   font-weight: 400;
-  font-size: var(--font-size-h3);
-  /* Sets the font size to 16px */
-  line-height: 1.6;
-  /* Sets the line-height to 1.6 */
+  font-size: var(--font-size-h3); /* Sets the font size to 16px */
+  line-height: 1.6; /* Sets the line-height to 1.6 */
   text-align: justify;
   min-height: 100vh;
   display: flex;
@@ -51,8 +49,6 @@ h3 {
 }
 
 a:hover a:focus {
-  /* No underlining when hovering over a link */
-  text-decoration: none;
   /* No underlining when hovering over a link */
   text-decoration: none;
 }
@@ -90,12 +86,9 @@ footer .page-footer {
 }
 
 div {
-  padding: 2px;
-  /* Adds a 10px inner spacing to all sides*/
-  margin: 4px;
-  /* Adds a 10px outer spacing to all sides*/
-  border: 0px solid var(--secondary-color);
-  /* Attributes describe: thickness, type, color*/
+  padding: 2px; /* Adds a 10px inner spacing to all sides */
+  margin: 4px; /* Adds a 10px outer spacing to all sides */
+  border: none; /* Attributes describe: thickness, type, color */
 }
 
 .profile {
@@ -163,8 +156,8 @@ footer {
   margin-left: 20px;
 }
 
-.navigation-list li:hover{
-  background-color: var(--primary-color)
+.navigation-list li:hover {
+  background-color: var(--primary-color);
 }
 
 .navigation-list {
@@ -219,19 +212,23 @@ footer {
     font-size: var(--font-size-h1);
   }
 }
+
 @media all and (max-width: 750px) {
   /* shared code */
 }
+
 @media all and (max-width: 500px) {
   .grid {
     grid-template-columns: 1fr;
   }
 }
+
 @media all and (min-width: 500px) and (max-width: 750px) {
   .grid {
     grid-template-columns: 1fr 1fr;
   }
 }
+
 @media all and (max-width: 750px) {
   .grid {
     grid-gap: 10px;
@@ -246,19 +243,17 @@ footer {
     font-size: 22px;
   }
 }
-.button, button {
+
+.button button {
   /* overwrites browser defaults and resets the border */
   border: none;
-  display: inline-block;
-  /* takes the font from the outer container */
-  font-family: inherit;
-  /* styles the button */
+  display: inline-block; /* takes the font from the outer container */
+  font-family: inherit; /* styles the button */
   background-color: var(--button-background-color);
   color: var(--secondary-color);
   text-decoration: none;
   padding: 5px;
-  border-radius: 3px;
-  /* width of the border, type, color */
+  border-radius: 3px; /* width of the border, type, color */
   border-bottom: 2px solid var(--primary-color) (0, 0, 0, 0.3);
   transition-duration: 0.9s opacity;
 }
@@ -268,8 +263,7 @@ button:focus,
 .button:hover,
 .button:focus {
   /* lets the mouse appear as a hand when hovering over the button */
-  cursor: pointer;
-  /* reduces the opacity of the button to 80% */
+  cursor: pointer; /* reduces the opacity of the button to 80% */
   opacity: 0.8;
 }
 
@@ -286,10 +280,10 @@ button:focus,
   background-color: var(--background-color);
   color: var(--secondary-color);
   align-items: center;
-  justify-content: center ;
+  justify-content: center;
 }
 
-.container .content{
+.container .content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -314,7 +308,6 @@ button:focus,
   right: -10px;
   top: 5%;
   transform: translateY(10%);
-
 }
 
 .content .left-side .details {
@@ -323,8 +316,8 @@ button:focus,
 }
 
 .content .left-side .details i {
-font-size: 25px;
-margin-bottom: 10px;
+  font-size: 25px;
+  margin-bottom: 10px;
 }
 
 .content .left-side .details .topic {
@@ -364,25 +357,25 @@ margin-bottom: 10px;
 }
 
 .right-side .button input[type="button"] {
-width: 100px;
-height: 40px;
-background-color: var(--button-background-color);
-color: var(--secondary-color);
-font-size: 20px;
-border-color: var(--secondary-color);
-border-radius: 5px;
-padding: 10px 20x;
-cursor: pointer;
-transition: all 0.5s ease;
+  width: 100px;
+  height: 40px;
+  background-color: var(--button-background-color);
+  color: var(--secondary-color);
+  font-size: 20px;
+  border-color: var(--secondary-color);
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
-.button input[type="button"]:hover{
+.button input[type="button"]:hover {
   background: var(--active-color);
 }
 
 @media screen and (max-width: 500px) {
   .container {
     float: none;
-    display:block;
+    display: block;
   }
 }
