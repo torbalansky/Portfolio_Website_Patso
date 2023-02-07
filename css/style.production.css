@@ -277,7 +277,7 @@ footer {
   }
 }
 
-.button button {
+.button {
   /* overwrites browser defaults and resets the border */
   border: none;
   display: inline-block; /* takes the font from the outer container */
