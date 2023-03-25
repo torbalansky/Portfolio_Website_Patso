@@ -142,10 +142,17 @@ div {
 
 .profile__portrait {
   border-radius: 5%;
+  margin-left: 20px;
 }
 .about__me {
   max-width: var(--max-width);
-  text-align: justify;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: left;
+}
+
+/.about__me ul {
+  margin-left: 50px;
 }
 
 .about__me h1 {
@@ -443,8 +450,6 @@ button:focus,
   display: inline-block;
   width: 120px;
   margin-top: 20px;
-  -webkit-box-sizing: ;
-          box-sizing: ;
   background-color: var(--background-color);
   color: var(--visited-color);
   font-size: 20px;
@@ -482,6 +487,7 @@ footer {
 
 .button__code {
   display: inline-block;
+  margin-left: 20px;
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
