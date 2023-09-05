@@ -455,11 +455,28 @@ footer {
   font-size: 16px;
   font-weight: bold;
   text-decoration: none;
-  color: var(--visited-color);
-  background-color: var(--background-color);
   border: 1px solid var(--visited-color);
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  isolation: isolate;
+}
+
+.button__code::after {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background-color: var(--button-background-color);
+  scale: 0 1;
+  transition: scale 500ms;
+  transform-origin: left;
+}
+
+.button__code:hover::after,
+.button__code:focus-visible::after {
+  scale: 1 1;
 }
 
 .button:hover {
