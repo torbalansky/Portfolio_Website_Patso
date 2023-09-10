@@ -16,13 +16,13 @@
     <nav class="main-navigation page-header__item">
         <ul role="menubar" class="navigation-list">
           <li role="presentation">
-            <a href="index.html" role="menuitem" class="navigation-list__item navigation-list__item" aria-label="Home"> 01.Home</a>
+            <a href="index.html" role="menuitem" class="navigation-list__item" aria-label="Home"> 01.Home</a>
         </li>
         <li role="presentation"> 
-            <a href="about.html" role="menubar" class="navigation-list__item--active" aria-label="About me"> 02.About</a>
+            <a href="about.html" role="menubar" class="navigation-list__item navigation-list__item--active" aria-label="About me"> 02.About</a>
         </li>
         <li role="presentation">
-            <a href="work.html" role="menuitem" class="navigation-list__item navigation-list__item" aria-label="Work"> 03.Work</a>
+            <a href="work.html" role="menuitem" class="navigation-list__item" aria-label="Work"> 03.Work</a>
         </li>
         <li>
             <a href="contact.html" role="menubar" class="navigation-list__item" aria-label="Contact me"><i class="fas fa-envelope"></i></a>
@@ -32,12 +32,9 @@
 </header>
 <main>
     <div class="about__me">
-        <h1> 01.About</h1>
-        <img src="img/#" class="profile__portrait" alt="Portrait of Plamen">
-          <ul>
-            <h2>Hello!</h2> I'm Patso, a biochemist turned web developer passionate about creating accessible and inclusive digital content. With a PhD background in biochemistry, I bring a unique problem-solving perspective to data analysis. After completing a web development course in 2023, I strive to deliver exceptional digital experiences that prioritize accessibility and inclusivity. When not coding, I enjoy music, nature, and sports. Feel free to reach out with any questions or comments. Pronouns: he/him.
+          <ul>Hello! <br> I'm Patso, a biochemist turned web developer passionate about creating accessible and inclusive digital content. With a PhD background in biochemistry, I bring a unique problem-solving perspective to data analysis. After completing a web development course in 2023, I strive to deliver exceptional digital experiences that prioritize accessibility and inclusivity. When not coding, I enjoy music, nature, and sports. Feel free to reach out with any questions or comments. Pronouns: he/him.
           </ul>
-          <a href="files/cv.pdf" class="button__code" download>Download my CV</a> <br><br>
+          <div class="button-container"><a href="files/cv.pdf" class="button__code" download>Download my CV</a></div>
         <table class="table__item">
             <thead>
               <tr>
@@ -62,8 +59,21 @@
                 <td>1</td>
                 <td>Intermediate</td>
               </tr>
+              <tr>
+                <td>Phyton</td>
+                <td>0.5</td>
+                <td>Beginner</td>
+              </tr>
             </tbody>
         </table> <br>
+    </div>
+    <div class="sidebar-container">
+      <div class="vertical__text"> <h3>torbalansky@gmail.com</h3></div>
+      <ul>
+        <li><a href="https://twitter.com/pstathis2" aria-label="Twitter Profile"> <img src="img/icons8-twitter-circled-32.png" alt="Twitter Icon"></a></li>
+        <li><a href="https://github.com/torbalansky" aria-label="GitHub Profile"> <img src="img/icons8-github-32.png" alt="GitHub Icon"></a></li>
+        <li><a href="https://www.facebook.com/patzu.rs" aria-label="Facebook Profile"> <img src="img/icons8-facebook-color-32.png" alt="Facebook Icon"></a></li>
+      </ul> 
     </div>
     <footer class="page-footer">
       <div class="flex-container">
@@ -71,14 +81,6 @@
       <a href="https://github.com/torbalansky"> <img src="img/icons8-gitlab-32_footer.png" alt="Github"></a>
       </div>
   </footer>
-    <div class="sidebar-container">
-      <div class="vertical__text"> <h3>torbalansky@gmail.com</h3></div>
-      <ul>
-        <li><a href="https://twitter.com/pstathis2"> <img src="img/icons8-twitter-circled-32.png"></a></li>
-        <li><a href="https://github.com/torbalansky"> <img src="img/icons8-github-32.png"></a></li>
-        <li><a href="https://www.facebook.com/patzu.rs"> <img src="img/icons8-facebook-color-32.png"></a></li>
-      </ul> 
-    </div>
   </main>
   <script src="js/tota11y.min.js"></script>
 </body>    

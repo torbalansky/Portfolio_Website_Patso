@@ -6,6 +6,7 @@
   --active-color: #f00;
   --element-selector-color: rgb(218, 222, 204);
   --border-color: white;
+  --button-code: rgb(117, 117, 250);
   --button-background-color: #565757;
   --font-size-h1: 60px;
   --font-size-h2: 40px;
@@ -19,7 +20,6 @@ body {
   background-color: var(--background-color);
   color: var(--secondary-color);
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-  font-weight: 400;
   font-size: var(--font-size-h3);
   line-height: 2;
   text-align: justify;
@@ -42,7 +42,7 @@ body {
   margin-top: 120px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 820px) {
   .sidebar-container {
     display: none;
   }
@@ -98,6 +98,7 @@ a:active {
 
 .navigation-list__item--active {
   text-decoration: none;
+  background-color: var(--button-code); 
 }
 
 a {
@@ -116,28 +117,11 @@ div {
   border: none; /* Attributes describe: thickness, type, color */
 }
 
-.profile {
+.profile__item, .about__me {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 10px;
   text-align: left;
-}
-
-.profile__portrait {
-  border-radius: 5%;
-  margin-left: 20px;
-}
-
-.about__me {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 10px;
-  text-align: left;
-}
-
-.about__me h1 {
-  align-items: start;
-  text-align: center;
 }
 
 * {
@@ -149,7 +133,6 @@ div {
 }
 
 .page-header {
-  background-color: var(--grid-item-color);
   display: flex;
   width: var(--width);
   padding: 7px;
@@ -177,7 +160,9 @@ div {
 }
 
 .navigation-list li:hover {
-  background-color: var(--primary-color);
+  background-color: var(--button-code);
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .navigation-list {
@@ -266,10 +251,6 @@ div {
   }
 }
 
-@media all and (max-width: 750px) {
-  /* shared code */
-}
-
 @media all and (max-width: 500px) {
   .grid {
     grid-template-columns: 1fr;
@@ -321,10 +302,22 @@ button:focus,
 }
 
 .table__item {
-  margin-left: auto;
-  margin-right: auto;
+  width: var(--max-width);
   text-align: center;
   border: 2px solid var(--secondary-color);
+}
+
+.table__item tr:hover {
+  background-color: var(--button-background-color);
+}
+
+@media screen and (max-width: 750px) {
+  .table__item {
+    width: 100%;
+    display: block;
+    font-size: 14px;
+    border: none !important;
+  }
 }
 
 .container {
@@ -437,7 +430,7 @@ footer {
   clear: both;
   display: list-item;
   width: var(--width);
-  background-color: var(--background-color1);
+  background-color: var(--background-color);
   color: var(--secondary-color);
   text-align: center;
   margin-top: 20px;
@@ -448,9 +441,17 @@ footer {
   clear: both;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
 .button__code {
-  display: inline-block;
-  margin-left: 20px;
+  background-color: var(--secondary-color);
+  color: var(--background-color) !important;
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
@@ -468,7 +469,7 @@ footer {
   position: absolute;
   z-index: -2;
   inset: 0;
-  background-color: var(--button-background-color);
+  background-color: var(--button-code);
   scale: 0 1;
   transition: scale 500ms;
   transform-origin: left;
