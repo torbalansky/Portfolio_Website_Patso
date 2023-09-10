@@ -503,7 +503,7 @@ footer {
   position: absolute;
   z-index: -2;
   inset: 0;
-  background-color: var(--button-background-color);
+  background-color: var(--button-code);
   scale: 0 1;
   -webkit-transition: scale 500ms;
   -o-transition: scale 500ms;
