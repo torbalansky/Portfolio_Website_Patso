@@ -55,6 +55,7 @@ body {
           box-sizing: border-box;
   margin-bottom: 40px;
   margin-top: 120px;
+  z-index: 2;
 }
 
 @media (max-width: 820px) {
@@ -75,8 +76,8 @@ body {
 .vertical__text {
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl; /* Sets the writing mode to vertical */
-  text-orientation: sideways; /* Sets the text orientation to upright */
+          writing-mode: vertical-rl; 
+  text-orientation: sideways; 
 }
 
 h1 {
@@ -99,39 +100,36 @@ h3 {
 }
 
 a:hover a:focus {
-  /* No underlining when hovering over a link */
   text-decoration: none;
 }
 
 a:visited {
-  /* visited link */
   color: var(--visited-color);
 }
 
 a:active {
-  /* selected link */
   color: var(--active-color);
 }
 
 .navigation-list__item--active {
   text-decoration: none;
-  background-color: var(--button-code); 
+  background-color: var(--button-code);
+  padding: 10px;
+  border-radius: 5px;
 }
 
 a {
-  /* element selector */
   color: var(--element-selector-color);
 }
 
 #my-link {
-  /* id selector */
   color: var(--primary-color);
 }
 
 div {
-  padding: 2px; /* Adds a 10px inner spacing to all sides */
-  margin: 4px; /* Adds a 10px outer spacing to all sides */
-  border: none; /* Attributes describe: thickness, type, color */
+  padding: 2px; 
+  margin: 4px; 
+  border: none; 
 }
 
 .profile__item, .about__me {
@@ -286,15 +284,14 @@ div {
 }
 
 .button {
-  /* overwrites browser defaults and resets the border */
   border: none;
-  display: inline-block; /* takes the font from the outer container */
-  font-family: inherit; /* styles the button */
+  display: inline-block; 
+  font-family: inherit; 
   background-color: var(--button-background-color);
   color: var(--secondary-color);
   text-decoration: none;
   padding: 5px;
-  border-radius: 3px; /* width of the border, type, color */
+  border-radius: 3px; 
   border-bottom: 2px solid var(--primary-color) (0, 0, 0, 0.3);
   -webkit-transition-duration: 0.9s opacity;
        -o-transition-duration: 0.9s opacity;
@@ -305,8 +302,7 @@ button:hover,
 button:focus,
 .button:hover,
 .button:focus {
-  /* lets the mouse appear as a hand when hovering over the button */
-  cursor: pointer; /* reduces the opacity of the button to 80% */
+  cursor: pointer; 
   opacity: 0.8;
 }
 
@@ -330,129 +326,117 @@ button:focus,
 }
 
 .container {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: var(--background-color);
-  color: var(--secondary-color);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px auto;
+  max-width: 700px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.container .content {
+.left-side, .right-side {
+  padding: 10px;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.details {
+  margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.container .content .left-side {
-  width: 45%;
-  height: 100%;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.details i {
+  margin-right: 10px;
+  font-size: 24px;
+  color: var(--background-color);
 }
 
-.content .left-side::before {
-  content: '';
-  position: absolute;
-  height: 80%;
-  width: 2px;
-  background-color: var(--secondary-color);
-  right: -10px;
-  top: 5%;
-  -webkit-transform: translateY(10%);
-      -ms-transform: translateY(10%);
-          transform: translateY(10%);
+.topic {
+  margin-right: 10px;
+  color: var(--background-color);
+  font-style: italic;
 }
 
-.content .left-side .details {
-  margin: 10px;
-  text-align: center;
+.text-one {
+  font-size: 18px;
+  color: var(--background-color);
 }
 
-.content .left-side .details i {
-  font-size: 25px;
+.right-side {
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.topic-text {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--background-color);
+}
+
+.input-box {
   margin-bottom: 10px;
 }
 
-.content .left-side .details .topic {
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.container .content .right-side {
-  width: 300px;
-  margin-left: 40px;
-}
-
-.content .right-side .topic-text {
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.right-side .input-box {
-  height: 50%;
-  width: 100%;
-}
-
-.right-side .input-box input,
-.right-side .input-box textarea {
-  height: 100%;
-  width: 100%;
-  border: none;
-  background: var(--border-color);
-  border-radius: 5px;
-  padding: 0 15px;
-}
-
-.right-side .message-box {
-  padding-bottom: 20px;
-  height: 200px;
-  margin-top: 6px;
-}
-
-.button__contact {
-  display: inline-block;
-  width: 120px;
-  margin-top: 20px;
-  background-color: var(--background-color);
-  color: var(--visited-color);
-  font-size: 20px;
+.standard.label {
   font-weight: bold;
-  cursor: pointer;
+  color: var(--background-color);
 }
 
-.button__contact :hover {
-  background: var(--visited-color);
+input[type="text"],
+input[type="email"],
+input[type="name"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--background-color);
+  border-radius: 5px;
 }
 
-@media screen and (max-width: 500px) {
+.message-box textarea {
+  resize: vertical;
+}
+
+.button__code:hover {
+  background-color: var(--button-code);
+}
+
+@media (max-width: 768px) {
   .container {
-    float: none;
-    display: block;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .left-side {
+    margin-bottom: 20px;
+  }
+
+  .right-side {
+    width: 100%;
   }
 }
 
@@ -520,8 +504,4 @@ footer {
 
 .button:hover {
   background-color: var(--button-background-color);
-}
-
-#contact__page {
-  text-align: center;
 }
