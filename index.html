@@ -9,39 +9,176 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.production.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script defer src="js/scripts.js"></script>
 </head>   
 <body>
     <header class="page-header">
-        <img src="img/Logo_PS_s.png" alt="Personal Logo" class="navigation__logo">
-        <nav class="main-navigation page-header__item">
-            <ul role="menubar" class="navigation-list">
-                <li role="presentation">
-                    <a href="index.html" role="menuitem" class="navigation-list__item navigation-list__item--active" aria-label="Home"> 01.Home</a>
-                </li>
-                <li role="presentation"> 
-                    <a href="about.html" role="menubar" class="navigation-list__item" aria-label="About Me"> 02.About</a>
-                </li>
-                <li role="presentation">
-                    <a href="work.html" role="menuitem" class="navigation-list__item" aria-label="Work"> 03.Work</a>
-                </li>
-                <li>
-                    <a href="contact.html" role="menubar" class="navigation-list__item" aria-label="Contact Me"><i class="fas fa-envelope"></i></a>
-                </li>
-            </ul>        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#"><img src="img/Logo_PS_s.png" alt="Personal Logo" class="navigation__logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">
+                            About
+                            <span class="sr-only">(About this website)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#work">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact <i class="fas fa-envelope"></i></a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
 <main>
-    <div class="profile__item">
-        <h3>Hello there!</h3>
-        <h2>My name is Plamen Statev. <br> I create digital content for the internet.</h2> 
-        <p> 
-            As a front-end developer with a keen eye for design, I strive to create seamless and captivating user experiences. 
-            I have a particular passion for crafting accessible and inclusive websites that cater to a diverse audience.
-        </p> 
-        <div class="button-container"><a href="https://github.com/torbalansky" class="button__code">Check out some of my code</a></div>
-    </div>    
+    <section class="hidden" id="home">
+        <div class="profile__item">
+            <img src="img/me_photo.jpg" class="profile__portrait" alt="Portrait of Plamen Stathis">
+            <div class="intro">
+                <div id="typed-text"></div>
+                <h1><span class="cursor"></span></h1>
+                <h2>My name is Plamen Statev.</h2><br>
+                <h3>I create digital content for the internet.</h3><br>
+            </div>
+            <div class="button-container">
+                <div class="button-container"><a href="https://github.com/torbalansky" class="button__code">Check my GitHub</a></div>
+                <div class="button-container"><a href="cv.html" class="button__code" download>Download my CV</a></div>
+            </div>
+        </div>
+    </section>    
+    
+    <section class="hidden" id="about">
+        <div class="about__me">
+            <div class="intro">
+            <h1>About me</h1>
+            <p><br>I'm a biochemist turned web developer passionate about creating accessible and inclusive digital content. 
+                With a PhD background in biochemistry, I bring a unique problem-solving perspective to data analysis. 
+                After completing a web development course in 2023, I strive to deliver exceptional digital experiences 
+                that prioritize accessibility and inclusivity. When not coding, I enjoy music, nature, and sports.</p>
+        </div>
+            <div class="skills__logos"> <br>
+              <h2>Skills:</h2>
+              <div class="logo hidden">
+                <img src="img/html.png" alt="html logo">
+              </div>
+              <div class="logo hidden">
+                <img src="img/CSS.png" alt="css logo">
+              </div>
+              <div class="logo hidden">
+                <img src="img/JS.png" alt="js logo">
+              </div>
+              <div class="logo hidden">
+                <img src="img/REACT.png" alt="react logo">
+              </div>
+              <div class="logo hidden">
+                <img src="img/NODE.png" alt="node logo">
+              </div>
+              <div class="logo hidden">
+                <img src="img/angular.png" alt="angular logo">
+              </div>
+              <div class="logo hidden">
+                <img src="img/AWS.png" alt="aws logo">
+              </div>
+            </div> 
+      </div>
+    </section>
+    
+    <section class="hidden" id="work">
+        <div class="my__projects">
+            <h1>My work</h1><br>
+        <div class="grid">
+            <div class="grid__item">
+                <img src="img/pokedex-app.png" alt="pokedex-app" class="project-img">
+                <p>The <strong>Pokedex app</strong> is a web application that lets users search for and view information about different Pokemon. It's built using HTML, CSS, JavaScript, Bootstrap, jQuery, and the Fetch API. Users can easily search for Pokemon by name and access detailed information.
+                </p>
+                <a href="https://github.com/torbalansky/pokedex-app" class="button__code">See project on GitHub</a>
+             </div>
+             <div class="grid__item">
+                <img src="img/MyFlix-Angular.png" alt="pokedex-app" class="project-img">
+                <p> <strong> MyFlix Angular </strong> is a dynamic and user-friendly web application built with Angular, TypeScript, HTML, and SCSS. Utilizing MongoDB, Express.js, and Node.js on the backend, it allows users to explore movie details, such as descriptions, genres, and directors, and create a personalized list of favorites films.
+                </p>
+                <a href="https://github.com/torbalansky/myFlix-Angular-client" class="button__code">See project on GitHub</a>
+             </div>
+             <div class="grid__item">
+                <img src="img/meet-app.png" alt="pokedex-app" class="project-img">
+                <p>
+                    <strong>MeetApp</strong> is a serverless, progressive web app (PWA) built with React, JavaScript, HTML, and CSS. It enables users to research, schedule, and attend events in their cities, with features such as city-based event filtering and offline functionality.
+                </p>
+                <a href="https://github.com/torbalansky/meet" class="button__code">See project on GitHub</a>
+             </div>
+             <div class="grid__item">
+                <img src="img/chat-app.jpg" alt="pokedex-app" class="project-img">
+                <p>
+                    <strong>ChatApp</strong> is a cross-platform messaging application built with React Native and Expo. It enables users to chat, share images, and location. The app utilizes Google Firebase for user authentication and stores data both online and offline. 
+                </p>
+                <a href="https://github.com/torbalansky/chat-app" class="button__code">See project on GitHub</a>
+             </div>
+            </div>
+            </div>
+    </section>
+    <section class="hidden" id="contact">
+        <div class="my__contacts">
+          <h1>Contact me</h1>
+          <div class="container__contact">
+            <div class="content">
+              <div class="left-container">
+                <div class="address details">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <div class="topic">address:</div>
+                  <div class="text-one">Av. de Republica, Oeiras, Portugal</div>
+                </div>
+                <div class="phone details">
+                  <i class="fas fa-phone-alt"></i>
+                  <div class="topic">phone:</div>
+                  <div class="text-one">+351 910 808 938</div>
+                </div>
+                <div class="email details">
+                  <i class="fas fa-envelope"></i>
+                  <div class="topic">email:</div>
+                  <div class="text-one"><a href="mailto:torbalansky@gmail.com">torbalansky@gmail.com</a></div>
+                </div>
+              </div>
+              <div class="right-container">
+                <div class="topic-text">Send me a message</div>
+                <form action="/send-email" method="post" id="contact-form" method="post" id="contact-form">
+                  <div class="input-box">
+                    <label for="Name" class="standard label">Name</label>
+                    <input type="Name" id="Name" placeholder="Your name..." required style="height: 30px;">
+                  </div>
+                  <div class="input-box">
+                    <label for="email" class="standard label">E-mail</label>
+                    <input type="email" id="email" placeholder="Your email..." required  style="height: 30px;">
+                  </div>
+                  <div class="input-box message-box">
+                    <label for="Message" class="standard label">Message</label>
+                    <textarea id="Message" name="Message" placeholder="Your message" required style="height: 60px;"></textarea>
+                  </div>
+                  <div class="send__button">
+                    <input type="button" class="send__button" value="Send" id="submit-button">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>      
     <div class="sidebar-container">
-        <div class="vertical__text"> <h3>torbalansky@gmail.com</h3></div>
+        <div class="vertical__text"> 
+            <a href="mailto:torbalansky@gmail.com">torbalansky@gmail.com</a>
+        </div>
         <ul>
           <li><a href="https://twitter.com/pstathis2" aria-label="Twitter Profile"> <img src="img/icons8-twitter-circled-32.png" alt="Twitter Icon"></a></li>
           <li><a href="https://github.com/torbalansky" aria-label="GitHub Profile"> <img src="img/icons8-github-32.png" alt="GitHub Icon"></a></li>
