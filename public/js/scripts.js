@@ -22,6 +22,44 @@ document.addEventListener("DOMContentLoaded", function () {
     typeText(0);
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); 
+  
+      // Create a FormData object from the form
+      const formData = new FormData(form);
+  
+      // Use the sendMail function to submit the form data
+      sendMail(formData);
+    });
+  
+    function sendMail(formData) {
+      fetch("/send", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then((data) => {
+          if (data.success) {
+            alert("Message sent successfully");
+            form.reset();
+          } else {
+            alert("Failed to send email");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+          alert("Failed to send email");
+        });
+    }
+});
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -36,33 +74,3 @@ const observer = new IntersectionObserver((entries) => {
 
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById('contact-form');
-    const submitButton = document.getElementById('submit-button');
-
-    submitButton.addEventListener('click', function () {
-        const name = document.getElementById('Name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('Message').value;
-
-        if (!name || !email || !message) {
-            alert('Please fill in all fields');
-            return;
-        }
-
-        if (!isValidEmail(email)) {
-            alert('Please enter a valid e-mail address');
-            return;
-        }
-
-        alert('Message sent successfully');
-        form.reset(); 
-    });
-
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-});

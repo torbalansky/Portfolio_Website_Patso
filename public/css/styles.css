@@ -25,6 +25,18 @@ main {
   position: sticky;
   top: 0;
   z-index: 100;
+  border: 5px solid var(--background-color);
+}
+
+.navigation__logo {
+  width: 90px;
+  margin-left: 25px;
+}
+
+.nav-link {
+  font-size: var(--font-size-h3);
+  font-weight: bold;
+  margin-right: 25px;
 }
 
 .sidebar-container {
@@ -78,15 +90,16 @@ main {
   text-decoration: none;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1180px) {
   .sidebar-container {
     display: none;
   }
 }
 
-section {
-  padding-top: 60px; 
-  display: grid;
+section .about__me,
+section .my__projects,
+section .my__contacts {
+  padding-top: 80px; 
   place-items: center;
   align-content: center;
   min-height: 100vh;
@@ -94,7 +107,7 @@ section {
 
 @media screen and (max-width: 768px) {
   section {
-    padding-top: 20px;
+    padding-top: 0 !important;
   }
 
   .intro {
@@ -119,16 +132,18 @@ section {
   float: left;
   width: 350px;
   height: 400px;
-  margin-right: 60px;
+  margin: 0 0 0 100px;
   border-radius: 5px;
 }
 
-@media all and (max-width: 726px) {
+@media all and (max-width: 500px) {
   .profile__portrait {
   width: 200px;
   height: 250px;
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left: 20px;
   margin-right: 20px;
-  margin-bottom: 20px;
   border-radius: 5px;
   }
 }
@@ -163,13 +178,35 @@ div {
   margin-top: 20px;
 }
 
+#home {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh;
+}
+
 .profile__item{
   width: 100%;
-  padding: 50px;
+  padding-top: 20px;
+  padding-bottom: 50px;
   margin-right: 100px;
-  text-align: left;
+  text-align: center;
   background-color: var(--background-color);
   color: var(--border-color);
+}
+
+/* For small screens (e.g., up to 768px wide) */
+@media screen and (max-width: 768px) {
+  #home {
+    padding-top: 20px; 
+  }
+
+  .profile__item {
+    width: auto; 
+    padding: 40px; 
+    margin-right: 0; 
+    margin-bottom: 10px;
+  }
 }
 
 .about__me {
@@ -198,7 +235,7 @@ div {
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 @media all and (max-width: 726px) {
@@ -217,8 +254,7 @@ div {
 @media screen and (max-width: 768px) {
   .profile__item,
   .about__me,
-  .my__projects,
-  .my__contacts {
+  .my__projects {
     max-width: 100%;
     margin-right: 0;
   }
@@ -323,7 +359,7 @@ a {
   align-items: left;
   background-color: var(--background-color2);
   max-width: var(--width);
-  padding: 40px 100px 40px 50px;
+  padding: 20px 100px 20px 20px;
   color: var(--border-color);
 }
 
@@ -412,18 +448,24 @@ textarea {
   resize: vertical;
 }
 
-@media (max-width: 768px) {
-  .content {
+@media (max-width: 1024px) {
+  .content,
+  .my__contacts {
     flex-direction: column;
     align-items: center;
   }
-  .my__contacts,
+  
   .left-container,
   .right-container {
-    width: 100%;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    padding: 0;
+    width: 90%;
+    height: fit-content;
+    margin: auto;
+    box-shadow: none;
+    text-align: center;
+  }
+
+  .my__contacts h1 {
+    margin-bottom: 50px;
   }
 }
 
@@ -446,16 +488,19 @@ footer {
 
 .button-container {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  margin: 20px;
   color: var(--border-color);
+  justify-content: center;
 }
 
 @media all and (max-width: 500px) {
   .button-container {
     flex-direction: column;
     width: max-content;
-    margin: 15px 0 15px 0;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 0;
   }
 }
 
@@ -498,12 +543,13 @@ footer {
 
 .send__button {
   text-align: center;
+  margin-bottom: 0;
 }
 
 .send__button input[type="button"] {
   background-color: var(--visited-color);
   color: var(--border-color); 
-  padding: 10px 20px; 
+  padding: 5px 15px; 
   border: none; 
   border-radius: 5px; 
   cursor: pointer; 

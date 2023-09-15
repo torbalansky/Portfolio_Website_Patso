@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>P Stathis</title>
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="shortcut icon" href="img/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.production.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -13,7 +13,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script defer src="js/scripts.js"></script>
 </head>   
 <body>
     <header class="page-header">
@@ -59,7 +58,6 @@
             </div>
         </div>
     </section>    
-    
     <section class="hidden" id="about">
         <div class="about__me">
             <div class="intro">
@@ -95,7 +93,6 @@
             </div> 
       </div>
     </section>
-    
     <section class="hidden" id="work">
         <div class="my__projects">
             <h1>My work</h1><br>
@@ -148,27 +145,27 @@
                 <div class="email details">
                   <i class="fas fa-envelope"></i>
                   <div class="topic">email:</div>
-                  <div class="text-one"><a href="mailto:torbalansky@gmail.com">torbalansky@gmail.com</a></div>
+                  <div class="text-one">torbalansky@gmail.com</div>
                 </div>
               </div>
               <div class="right-container">
                 <div class="topic-text">Send me a message</div>
-                <form action="/send-email" method="post" id="contact-form" method="post" id="contact-form">
+                <form action="/send" method="post" id="contact-form" enctype="multipart/form-data">
                   <div class="input-box">
                     <label for="Name" class="standard label">Name</label>
-                    <input type="Name" id="Name" placeholder="Your name..." required style="height: 30px;">
+                    <input type="text" id="Name" name="Name" placeholder="Your name..." required style="height: 30px;">
                   </div>
                   <div class="input-box">
                     <label for="email" class="standard label">E-mail</label>
-                    <input type="email" id="email" placeholder="Your email..." required  style="height: 30px;">
+                    <input type="email" id="email" name="email" placeholder="Your email..." required style="height: 30px;">
                   </div>
                   <div class="input-box message-box">
                     <label for="Message" class="standard label">Message</label>
                     <textarea id="Message" name="Message" placeholder="Your message" required style="height: 60px;"></textarea>
                   </div>
                   <div class="send__button">
-                    <input type="button" class="send__button" value="Send" id="submit-button">
-                  </div>
+                    <input type="submit" class="btn btn-primary" value="Submit" id="submit-button">
+                  </div>                  
                 </form>
               </div>
             </div>
@@ -193,5 +190,6 @@
     </footer>
 </main>
     <script src="js/tota11y.min.js"></script>
+    <script defer src="js/scripts.js"></script>
 </body>    
 </html>
