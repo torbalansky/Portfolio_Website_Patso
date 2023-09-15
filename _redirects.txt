@@ -1,0 +1,1 @@
+/send /.netlify/functions/contact-form-handler 200
