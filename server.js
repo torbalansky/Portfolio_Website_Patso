@@ -37,9 +37,9 @@ app.post('/send', upload.none(), async (req, res) => {
     console.log('Email sent');
     res.status(200).json({ success: true, message: 'Email sent successfully' });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ success: false, message: 'Failed to send email' });
-  }
+    console.error(error)
+    return { succes: false }
+    }
 });
 
 app.listen(port, () => {
