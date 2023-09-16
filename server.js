@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 // Handle form submissions
-app.post('/send', upload.none(), (req, res) => {
+app.post('/send', upload.none(), async (req, res) => {
   const { Name, email, Message } = req.body;
 
   const msg = {
@@ -32,16 +32,14 @@ app.post('/send', upload.none(), (req, res) => {
   };
 
   // Send the email using SendGrid
-  sgMail
-    .send(msg)
-    .then(() => {
-      console.log('Email sent');
-      res.status(200).json({ success: true, message: 'Email sent successfully' });
-    })
-    .catch((error) => {
-      console.error(error);
-      res.status(500).json({ success: false, message: 'Failed to send email' });
-    });
+  try {
+    await sgMail.send(msg);
+    console.log('Email sent');
+    res.status(200).json({ success: true, message: 'Email sent successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: 'Failed to send email' });
+  }
 });
 
 app.listen(port, () => {
