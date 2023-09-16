@@ -10,14 +10,14 @@ const port = process.env.PORT || 3000;
 // Middleware to parse form data
 const upload = multer();
 
-// Serve your HTML file and static assets
+// Serve HTML file and static assets
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
 
-// Configure SendGrid and set your API key
+// Configure SendGrid and set API key
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 // Handle form submissions
