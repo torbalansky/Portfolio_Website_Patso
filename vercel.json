@@ -1,12 +1,7 @@
 {
     "version": 2,
-    "functions": {
-      "api/send": {
-        "maxDuration": 10
-      }
-    },
     "routes": [
-      { "src": "/send", "dest": "server.js" },
+      { "src": "/api/send", "dest": "server.js" },
       { "src": "/(.*)", "dest": "server.js" }
     ]
   }
