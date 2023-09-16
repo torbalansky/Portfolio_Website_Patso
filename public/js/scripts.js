@@ -22,6 +22,45 @@ document.addEventListener("DOMContentLoaded", function () {
     typeText(0);
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); 
+  
+      // Create a FormData object from the form
+      const formData = new FormData(form);
+  
+      // Use the sendMail function to submit the form data
+      sendMail(formData);
+    });
+  
+    function sendMail(formData) {
+      fetch("/send", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then((data) => {
+          if (data.success) {
+            alert("Message sent successfully");
+            form.reset();
+          } else {
+            alert("Failed to send email");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+          alert("Failed to send email");
+        });
+    }
+});
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         console.log(entry)
