@@ -23,42 +23,46 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("contact-form");
+  const form = document.getElementById("contact-form");
+  const loadingSpinner = document.getElementById("loading-spinner");
+  
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); 
 
-    form.addEventListener("submit", function (event) {
-      event.preventDefault(); 
-  
-      // Create a FormData object from the form
-      const formData = new FormData(form);
-  
-      // Use the sendMail function to submit the form data
-      sendMail(formData);
-    });
-  
-    function sendMail(formData) {
-      fetch("/send", {
-        method: "POST",
-        body: formData,
-      })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then((data) => {
-          if (data.success) {
-            alert("Message sent successfully");
-            form.reset();
-          } else {
-            alert("Failed to send email");
+    loadingSpinner.classList.remove('hide');
+
+    const formData = new FormData(form);
+
+    sendMail(formData);
+  });
+
+  function sendMail(formData) {
+    fetch("/send", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+          if (!response.ok) {
+              throw new Error('Network response was not ok');
           }
-        })
-        .catch((error) => {
-          console.error(error);
+          return response.json();
+      })
+      .then((data) => {
+        if (data.success) {
+          loadingSpinner.classList.add('hide');
+          alert("Message sent successfully");
+          form.reset();
+        } else {
+          loadingSpinner.classList.add('hide');
           alert("Failed to send email");
-        });
-    }
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        loadingSpinner.classList.add('hide');
+        alert("Failed to send email");
+      });
+  }
 });
 
 const observer = new IntersectionObserver((entries) => {

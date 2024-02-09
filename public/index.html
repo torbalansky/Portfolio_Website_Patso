@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>P Stathis</title>
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="img/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.production.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -13,11 +13,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>   
 <body>
     <header class="page-header">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#"><img src="img/Logo_PS_s.png" alt="Personal Logo" class="navigation__logo"></a>
+            <a class="navbar-brand" href="#"><img src="img/Logo_PS_s.png" alt="Personal Logo" class="navigation__logo"> Plamen./Statev</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -50,11 +51,11 @@
                 <div id="typed-text"></div>
                 <h1><span class="cursor"></span></h1>
                 <h2>My name is Plamen Statev.</h2><br>
-                <h3>I create digital content for the internet.</h3><br>
+                <h4> I am results-driven Full-Stack Developer transforming from research to tech.</h4><br>
             </div>
             <div class="button-container">
                 <div class="button-container"><a href="https://github.com/torbalansky" class="button__code">Check my GitHub</a></div>
-                <div class="button-container"><a href="cv.html" class="button__code" download>Download my CV</a></div>
+                <div class="button-container"><a href="cv.pdf" class="button__code" download>Download my CV</a></div>
             </div>
         </div>
     </section>    
@@ -62,10 +63,10 @@
         <div class="about__me">
             <div class="intro">
             <h1>About me</h1>
-            <p><br>I'm a biochemist turned web developer passionate about creating accessible and inclusive digital content. 
-                With a PhD background in biochemistry, I bring a unique problem-solving perspective to data analysis. 
-                After completing a web development course in 2023, I strive to deliver exceptional digital experiences 
-                that prioritize accessibility and inclusivity. When not coding, I enjoy music, nature, and sports.</p>
+            <p><br> A Ph.D. biochemist turned web developer driven by a passion for crafting accessible and inclusive digital content.
+              Leveraging my background in research, I offer a unique problem-solving perspective to tackle challenges in web development.
+              Following the completion of a web development course in 2023, I've dedicated myself to delivering exceptional digital experiences 
+              that prioritize accessibility and inclusivity. Beyond coding, I find solace in music, nature, and sports. <br><br> My motto is: 'Simplicity is the ultimate sophistication.'</p>
         </div>
             <div class="skills__logos"> <br>
               <h2>Skills:</h2>
@@ -90,6 +91,12 @@
               <div class="logo hidden">
                 <img src="img/AWS.png" alt="aws logo">
               </div>
+              <div class="logo hidden">
+                <img src="img/python.png" alt="python logo">
+              </div>
+              <div class="logo hidden">
+                <img src="img/django.png" alt="django logo">
+              </div>
             </div> 
       </div>
     </section>
@@ -98,30 +105,30 @@
             <h1>My work</h1><br>
         <div class="grid">
             <div class="grid__item">
-                <img src="img/pokedex-app.png" alt="pokedex-app" class="project-img">
-                <p>The <strong>Pokedex app</strong> is a web application that lets users search for and view information about different Pokemon. It's built using HTML, CSS, JavaScript, Bootstrap, jQuery, and the Fetch API. Users can easily search for Pokemon by name and access detailed information.
+                <img src="img/recipe_app.png" alt="recipe-app" class="project-img">
+                <p>The <strong>Recipe App</strong> is a dynamic web platform developed with Django, Python, HTML, CSS, and JavaScript. It enables users to explore, organize, and share their favorite recipes effortlessly. With intuitive features, users can download, create, and interact with recipes through comments.
                 </p>
-                <a href="https://github.com/torbalansky/pokedex-app" class="button__code">See project on GitHub</a>
+                <a href="https://github.com/torbalansky/recipe-app" class="button__code">See project on GitHub</a>
              </div>
              <div class="grid__item">
-                <img src="img/MyFlix-Angular.png" alt="pokedex-app" class="project-img">
+                <img src="img/MyFlix_Angular.png" alt="myFlix-Angular-client" class="project-img">
                 <p> <strong> MyFlix Angular </strong> is a dynamic and user-friendly web application built with Angular, TypeScript, HTML, and SCSS. Utilizing MongoDB, Express.js, and Node.js on the backend, it allows users to explore movie details, such as descriptions, genres, and directors, and create a personalized list of favorites films.
                 </p>
                 <a href="https://github.com/torbalansky/myFlix-Angular-client" class="button__code">See project on GitHub</a>
              </div>
              <div class="grid__item">
-                <img src="img/meet-app.png" alt="pokedex-app" class="project-img">
+                <img src="img/myFlix_react.jpg" alt="myflix-app" class="project-img">
                 <p>
-                    <strong>MeetApp</strong> is a serverless, progressive web app (PWA) built with React, JavaScript, HTML, and CSS. It enables users to research, schedule, and attend events in their cities, with features such as city-based event filtering and offline functionality.
+                    <strong>MyFlix React</strong> MyFlix is a client-side movie app built with React, React Bootstrap, Redux, and JavaScript. It offers users access to an extensive movie library, detailed film information, and favorite management. Additionally, the app features secure user registration, login, and authentication via JWT tokens, ensuring a safe and engaging movie experience.
                 </p>
-                <a href="https://github.com/torbalansky/meet" class="button__code">See project on GitHub</a>
+                <a href="https://github.com/torbalansky/myFlix-client" class="button__code">See project on GitHub</a>
              </div>
              <div class="grid__item">
-                <img src="img/chat-app.jpg" alt="pokedex-app" class="project-img">
+                <img src="img/chat-app.jpg" alt="chat-app" class="project-img">
                 <p>
-                    <strong>ChatApp</strong> is a cross-platform messaging application built with React Native and Expo. It enables users to chat, share images, and location. The app utilizes Google Firebase for user authentication and stores data both online and offline. 
-                </p>
-                <a href="https://github.com/torbalansky/chat-app" class="button__code">See project on GitHub</a>
+                    <strong>The ChatApp</strong> is a cross-platform messaging application developed with React Native and Expo. It empowers users to engage in chats, share images, and locations seamlessly. Leveraging Google Firebase for user authentication, the app ensures secure interactions while enabling data storage both online and offline, enhancing user experience and accessibility.
+                  </p>
+                  <a href="https://github.com/torbalansky/chat-app" class="button__code">See project on GitHub</a>
              </div>
             </div>
             </div>
@@ -145,7 +152,7 @@
                 <div class="email details">
                   <i class="fas fa-envelope"></i>
                   <div class="topic">email:</div>
-                  <div class="text-one">torbalansky@gmail.com</div>
+                  <div class="text-one">patzostatev@gmail.com</div>
                 </div>
               </div>
               <div class="right-container">
@@ -165,7 +172,11 @@
                   </div>
                   <div class="send__button">
                     <input type="submit" class="btn btn-primary" value="Submit" id="submit-button">
-                  </div>                  
+                  </div>
+                  <div id="loading-spinner" class="hide">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    Sending...
+                  </div>                          
                 </form>
               </div>
             </div>
@@ -174,12 +185,12 @@
       </section>      
     <div class="sidebar-container">
         <div class="vertical__text"> 
-            <a href="mailto:torbalansky@gmail.com">torbalansky@gmail.com</a>
+            <a href="mailto:patzostatev@gmail.com">patzostatev@gmail.com</a>
         </div>
         <ul>
           <li><a href="https://twitter.com/pstathis2" aria-label="Twitter Profile"> <img src="img/icons8-twitter-circled-32.png" alt="Twitter Icon"></a></li>
-          <li><a href="https://github.com/torbalansky" aria-label="GitHub Profile"> <img src="img/icons8-github-32.png" alt="GitHub Icon"></a></li>
-          <li><a href="https://www.facebook.com/patzu.rs" aria-label="Facebook Profile"> <img src="img/icons8-facebook-color-32.png" alt="Facebook Icon"></a></li>
+          <li><a href="https://github.com/torbalansky" aria-label="GitHub Profile"> <img src="img/icons8-github-48.png" alt="GitHub Icon"></a></li>
+          <li><a href="https://www.linkedin.com/in/plamen-statev-808bbb2b3/" aria-label="Linkedin Profile"> <img src="img/icons8-linkedin-48.png" alt="Facebook Icon"></a></li>
         </ul> 
       </div>
       <footer class="page-footer">

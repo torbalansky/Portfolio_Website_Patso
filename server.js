@@ -1,8 +1,9 @@
 const express = require('express');
 const multer = require('multer');
-const sgMail = require('@sendgrid/mail');
+const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
 dotenv.config();
+const smtpTransport = require('nodemailer-smtp-transport');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -17,29 +18,35 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
 
-// Configure SendGrid and set API key
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+// Create Nodemailer transporter
+const transporter = nodemailer.createTransport(smtpTransport({
+  host: process.env.EMAIL_HOST,
+  port: process.env.EMAIL_PORT,
+  auth: {
+    user: process.env.EMAIL_USERNAME,
+    pass: process.env.EMAIL_PASSWORD,
+  },
+}));
 
-// Handle form submissions
 app.post('/send', upload.none(), async (req, res) => {
   const { Name, email, Message } = req.body;
 
-  const msg = {
-    to: 'torbalansky@gmail.com', 
-    from: 'patzostatev@gmail.com', 
+  const mailOptions = {
+    from: process.env.EMAIL_USERNAME,
+    to: 'torbalansky@gmail.com',
     subject: 'New Contact Form Submission',
     text: `Name: ${Name}\nEmail: ${email}\nMessage: ${Message}`,
   };
 
-  // Send the email using SendGrid
-  try {
-    await sgMail.send(msg);
-    console.log('Email sent');
-    res.status(200).json({ success: true, message: 'Email sent successfully' });
-  } catch (error) {
-    console.error(error)
-    return { succes: false }
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ success: false, message: 'Error sending email' });
+    } else {
+      console.log('Email sent:', info.response);
+      res.status(200).json({ success: true, message: 'Email sent successfully' });
     }
+  });
 });
 
 app.listen(port, () => {
