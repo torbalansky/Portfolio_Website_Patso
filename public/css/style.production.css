@@ -197,7 +197,7 @@ div {
 }
 
 .intro {
-  margin-top: 20px;
+  margin: 30px;
 }
 
 #home {
@@ -254,7 +254,7 @@ div {
   text-align: justify;
 }
 
-@media all and (max-width: 726px) {
+@media all and (max-width: 500px) {
   .about__me {
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -262,6 +262,11 @@ div {
     padding: 10px 0 10px 0;
     text-align: center;
     margin: 0;
+  }
+
+  .about__me p {
+    font-size: var(--font-size-h3);
+    margin: 5px;
   }
 }
 
