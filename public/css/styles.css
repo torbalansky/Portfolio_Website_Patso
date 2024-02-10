@@ -289,6 +289,10 @@ a {
 }
 
 .grid__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: var(--border-color);
   -webkit-text-fill-color: var(--secondary-color);
   border: 2px solid var(--secondary-color);
@@ -344,7 +348,7 @@ a {
 
 @media all and (min-width: 751px) and (max-width: 1000px) {
   .grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
