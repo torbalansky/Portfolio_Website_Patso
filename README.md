@@ -11,7 +11,4 @@ This is my personal portfolio website showcasing my projects, skills, and contac
 - Font Awesome
 - jQuery
 
-## Screenshots
-![Screenshot](/path/to/screenshot.png)
-
 Visit my website: [Plamen Statev's Portfolio](https://plamen-statev.vercel.app/)
